@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         mBinding.btnRecyclerView.setOnClickListener(btnClickEvents)
         mBinding.btnWebView.setOnClickListener(btnClickEvents)
         mBinding.btnFragmentView.setOnClickListener(btnClickEvents)
+        mBinding.btnApiCall.setOnClickListener(btnClickEvents)
 
     }
 
@@ -35,7 +36,13 @@ class MainActivity : AppCompatActivity() {
             R.id.btnGridView -> goToGridView()
             R.id.btnWebView -> openWebView()
             R.id.btnFragmentView -> openFragmentActivity()
+            R.id.btnApiCall -> getApiData()
         }
+    }
+
+    private fun getApiData() {
+        val intent = Intent(this, ApiDataActivity::class.java)
+        startActivity(intent)
     }
 
     private fun openFragmentActivity() {
